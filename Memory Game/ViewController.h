@@ -27,7 +27,7 @@
 
 //- (void)setBackgroundImageByColor:(UIColor *)backgroundColor forState:(UIControlState)state;
  
-  //  +(UIColor *) recColor;
+  //  +(UIColor *) recColor; 
 
 
 @end

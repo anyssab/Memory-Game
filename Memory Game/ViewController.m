@@ -14,6 +14,9 @@
 
 @property (strong,nonatomic) IBAction UIGestureRecognizerState: LastTouch];
 
+
+
+
 //need help with proprty type
 
 
