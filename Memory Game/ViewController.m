@@ -12,17 +12,7 @@
 
 //property
 
-@property (strong,nonatomic) IBAction UIGestureRecognizerState: LastTouch];
-
-
-
-
-//need help with proprty type
-
-
-
-
-
+@property (nonatomic) NSUInteger _lastTouch;
 
 
 
@@ -30,8 +20,16 @@
 
 @implementation ViewController
 
+@synthesize _lastTouch;
+
 - (void)viewDidLoad
 {
+    
+    //HERE
+    // init last touch to be -1 so you know if it was never assigned in handbutton click
+    _lastTouch = -1;
+    
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.MemoryLabel.text = @"Memory Game";
@@ -99,7 +97,7 @@
     [Button4 setImage:Button4SImage forState:UIControlStateSelected];
     Button4.tag = 10;
     
-    UIImage *Button5SImage = [UIImage imageNamed:@"mushroom.png"];
+    UIImage *Button5SImage = [UIImage imageNamed:@"heart.png"];
     [Button5 setImage:Button5SImage forState:UIControlStateSelected];
     Button5.tag = 6;
     
@@ -150,44 +148,160 @@
 
     
     //if sender is highlighted set it to unhl )
-    [self handleButtonNotClick:sender];
+   // [self handleButtonNotClick:sender];
     //[sender setHighlighted:YES];
     [sender setSelected:YES];
     
     
-    if (lastTouch != NO);
-    (lastTouch.tag = sender.tag);
-    [sender setSelected:YES];
-    if(lastTouch == YES);
-    lastTouch setSelected = YES
-    //property lastTouch = sender
-            
-            
     
+    if(_lastTouch== -1){
+        _lastTouch = sender.tag;
+        return;
+    }
+    switch(sender.tag){
+        case 0:
+            if(_lastTouch != 11){
+                UIButton *button = (UIButton *)[self.view viewWithTag:_lastTouch];
+                [button setSelected:NO];
+                _lastTouch = sender.tag;
+
+            }else{
+                _lastTouch = -1;
+            }
+            break;
+        case 1:
+            if (_lastTouch != 9){
+                UIButton *button = (UIButton *)[self.view viewWithTag:_lastTouch];
+                [button setSelected:NO];
+                _lastTouch = sender.tag;
+
+            }else{
+                _lastTouch = -1;
+            }
+            break;
+        case 2:
+            if(_lastTouch != 7){
+                UIButton *button =(UIButton *)[self.view viewWithTag:_lastTouch];
+                [button setSelected:NO];
+                _lastTouch = sender.tag;
+            }else{
+                UIButton *button =(UIButton *)[self.view viewWithTag:_lastTouch];
+                [button setSelected:YES];
+                _lastTouch = -1;
+            }
+            //ask why no else condition
+            break;
+        case 3:
+            if (_lastTouch != 8) {
+                UIButton *button =(UIButton *) [self.view viewWithTag:_lastTouch];
+                [button setSelected:NO];
+                _lastTouch = sender.tag;
+
+            }else{
+                _lastTouch = -1;
+            }break;
+        case 4:
+            if(_lastTouch != 10){
+                UIButton *button = (UIButton *)[self.view viewWithTag:_lastTouch];
+                [button setSelected:NO];
+                _lastTouch = sender.tag;
+
+            }else{
+                UIButton *button = (UIButton *)[self.view viewWithTag:_lastTouch];
+                [button setSelected:YES];
+                _lastTouch =-1;
+            }
+            break;
+        case 5:
+        if(_lastTouch != 6){
+            UIButton *button = (UIButton *)[self.view viewWithTag:_lastTouch];
+            [button setSelected:NO];
+            _lastTouch = sender.tag;
+        }else{
+            UIButton *button = (UIButton *)[self.view viewWithTag:_lastTouch];
+            [button setSelected:YES];
+            _lastTouch =-1;
+        }
+            break;
+        case 6:
+        {
+            UIButton *button = (UIButton *)[self.view viewWithTag:_lastTouch];
+            [button setSelected:NO];
+            _lastTouch = -1;
+        }
+            break;
+        case 7:
+            if (_lastTouch != 2) {
+                UIButton *button = (UIButton *)[self.view viewWithTag:_lastTouch];
+                [button setSelected:NO];
+                _lastTouch = sender.tag;
+
+            } else {
+                UIButton *button = (UIButton *)[self.view viewWithTag:_lastTouch];
+                [button setSelected:YES];
+                _lastTouch = -1;
+            }
+            break;
+        case 8:
+            if (_lastTouch != 3) {
+                UIButton *button = (UIButton *)[self.view viewWithTag:_lastTouch];
+                [button setSelected:NO];
+                _lastTouch = sender.tag;
+
+            } else {
+                _lastTouch = -1;
+            }
+            break;
+        case 9:
+            if (_lastTouch != 1) {
+                UIButton *button = (UIButton *)[self.view viewWithTag:_lastTouch];
+                [button setSelected:NO];
+                _lastTouch = sender.tag;
+
+            } else {
+                _lastTouch = -1;
+            }
+            break;
+        case 10:
+            if (_lastTouch != 4) {
+                UIButton *button = (UIButton *)[self.view viewWithTag:_lastTouch];
+                [button setSelected:NO];
+                _lastTouch = sender.tag;
+
+            } else {
+                UIButton *button = (UIButton *)[self.view viewWithTag:_lastTouch];
+                [button setSelected:YES];
+                _lastTouch = -1;
+            }
+            break;
+        case 11:
+            if (_lastTouch != 0) {
+                UIButton *button = (UIButton *)[self.view viewWithTag:_lastTouch];
+                [button setSelected:NO];
+                _lastTouch = sender.tag;
+
+                
+            } else {
+                _lastTouch = -1;
+            }
+            break;
+        default:
+            break;
+    }
     
+    }
+            
 
-}
 
-
--(IBAction)handleButtonNotClick:(UIButton *)sender{
+//-(IBAction)handleButtonNotClick:(UIButton *)sender{
     
     
     //if sender is highlighted set it to unhl )
-    [Button0 setSelected:NO];
-    [Button1 setSelected:NO];
-    [Button2 setSelected:NO];
-    [Button3 setSelected:NO];
-    [Button4 setSelected:NO];
-    [Button5 setSelected:NO];
-    [Button6 setSelected:NO];
-    [Button7 setSelected:NO];
-    [Button8 setSelected:NO];
-    [Button9 setSelected:NO];
-    [Button10 setSelected:NO];
-    [Button11 setSelected:NO];
+   
     
-    [sender setSelected:YES];
-}
+   // [sender setSelected:YES];
+    
+//}
 
 
 
